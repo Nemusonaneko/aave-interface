@@ -36,7 +36,6 @@ import { WalletModalContextProvider } from 'src/hooks/useWalletModal';
 import { PermissionProvider } from 'src/hooks/usePermissions';
 import AaveMetaImage from 'public/aaveMetaLogo.png';
 import { FaucetModal } from 'src/components/transactions/Faucet/FaucetModal';
-import { AddressBlocked } from 'src/components/AddressBlocked';
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -79,33 +78,31 @@ export default function MyApp(props: MyAppProps) {
               <ProtocolDataProvider>
                 <ConnectionStatusProvider>
                   <AppGlobalStyles>
-                    <AddressBlocked>
-                      <PermissionProvider>
-                        <ModalContextProvider>
-                          <BackgroundDataProvider>
-                            <AppDataProvider>
-                              <TxBuilderProvider>
-                                <WalletModalContextProvider>
-                                  <GasStationProvider>
-                                    {getLayout(<Component {...pageProps} />)}
-                                    <SupplyModal />
-                                    <WithdrawModal />
-                                    <BorrowModal />
-                                    <RepayModal />
-                                    <CollateralChangeModal />
-                                    <RateSwitchModal />
-                                    <ClaimRewardsModal />
-                                    <EmodeModal />
-                                    <SwapModal />
-                                    <FaucetModal />
-                                  </GasStationProvider>
-                                </WalletModalContextProvider>
-                              </TxBuilderProvider>
-                            </AppDataProvider>
-                          </BackgroundDataProvider>
-                        </ModalContextProvider>
-                      </PermissionProvider>
-                    </AddressBlocked>
+                    <PermissionProvider>
+                      <ModalContextProvider>
+                        <BackgroundDataProvider>
+                          <AppDataProvider>
+                            <TxBuilderProvider>
+                              <WalletModalContextProvider>
+                                <GasStationProvider>
+                                  {getLayout(<Component {...pageProps} />)}
+                                  <SupplyModal />
+                                  <WithdrawModal />
+                                  <BorrowModal />
+                                  <RepayModal />
+                                  <CollateralChangeModal />
+                                  <RateSwitchModal />
+                                  <ClaimRewardsModal />
+                                  <EmodeModal />
+                                  <SwapModal />
+                                  <FaucetModal />
+                                </GasStationProvider>
+                              </WalletModalContextProvider>
+                            </TxBuilderProvider>
+                          </AppDataProvider>
+                        </BackgroundDataProvider>
+                      </ModalContextProvider>
+                    </PermissionProvider>
                   </AppGlobalStyles>
                 </ConnectionStatusProvider>
               </ProtocolDataProvider>
